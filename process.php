@@ -1,22 +1,44 @@
 <?php
-$name = $_POST['name'] ?? '';
-$qty = $_POST['qty'] ?? 0;
-$price = $_POST['price'] ?? 0;
-$total = $qty * $price;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $customerName  = htmlspecialchars($_POST['customerName']);
+    $customerPhone = htmlspecialchars($_POST['customerPhone']);
+    $product       = htmlspecialchars($_POST['product']);
+    $quantity      = (int) $_POST['quantity'];
+
+    $prices = [
+        "product1" => 1000,
+        "product2" => 2000,
+        "product3" => 3000
+    ];
+
+    $price = isset($prices[$product]) ? $prices[$product] : 0;
+    $total = $price * $quantity;
+}
 ?>
 
-<h2>Order Receipt</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Receipt</title>
+</head>
+<body>
 
-<p>Name: <?php echo $name; ?></p>
-<p>Total: <?php echo $total; ?></p>
+<h2>Musanze Market Order Slip</h2>
 
-<a href="index.html">Back</a>
+<p><strong>Customer Name:</strong> <?php echo $customerName; ?></p>
+<p><strong>Customer Phone:</strong> <?php echo $customerPhone; ?></p>
+<p><strong>Product:</strong> <?php echo ucfirst($product); ?></p>
+<p><strong>Quantity:</strong> <?php echo $quantity; ?></p>
+<p><strong>Unit Price:</strong> <?php echo $price; ?> RWF</p>
 
-<?php
-// RELAY:
-// Student 1 → Sanitize output
-// Student 2 → Format receipt layout
-// Student 3 → Handle empty values
-// Student 4 → Add current date
-// Student 5 → Improve total currency format
-?>
+<hr>
+
+<p><strong>Total Amount:</strong> <?php echo $total; ?> RWF</p>
+
+<br>
+
+<a href="index.html">Back to Order Form</a>
+
+</body>
+</html>
