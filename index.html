@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Musanze Order Slip</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h2>Market Order Slip</h2>
+
+<form action="process.php" method="POST" id="orderForm">
+
+    <label>Aggregator Name</label>
+    <input type="text" name="name" id="name">
+
+    <label>Quantity (Kg)</label>
+    <input type="number" name="qty" id="qty">
+
+    <label>Price per Kg</label>
+    <input type="number" name="price" id="price">
+
+    <p id="total"></p>
+
+    <button type="submit">Generate Slip</button>
+
+</form>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
+
+<!--
+RELAY HINTS:
+Student 1 → Add semantic container and apply box model spacing
+Student 2 → Connect labels properly using for + id
+Student 3 → Add responsive wrapper
+Student 4 → Ensure required fields
+Student 5 → Improve total display structure
+-->
