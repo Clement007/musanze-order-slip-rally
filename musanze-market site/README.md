@@ -2,7 +2,6 @@
 
 > **Advanced Web Design & Development — Assignment #2**  
 > INES-Ruhengeri · Faculty of Sciences and Information Technology  
-> Year IIA&B February Day Program
 
 ---
 
@@ -108,7 +107,7 @@ Then visit: `http://localhost/musanze-market/public/`
 ### Step 5 — Login
 ```
 Email:    admin@musanze.rw
-Password: Admin@1234
+Password: password
 ```
 
 ---
@@ -116,7 +115,7 @@ Password: Admin@1234
 ## 🌐 Hosting Provider
 
 **InfinityFree** (free PHP + MySQL hosting)  
-Live URL: `https://YOUR_SUBDOMAIN.infinityfreeapp.com/`
+Live URL: `https://musanzemarket.infinityfreeapp.com/`
 
 ### Deployment Steps (InfinityFree)
 1. Create a free account at infinityfree.net
